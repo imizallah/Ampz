@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { loadUsers } from '../actions/users';
 import UsersList from './UsersList';
 import Header from './Header';
-import Filters from './Filters';
 
 const HomePage = (props) => {
   const [users, setUsers] = useState(props.users);
@@ -45,10 +44,10 @@ const HomePage = (props) => {
   }
 
   return (
-    <React.Fragment>
+    <>
       <Header handleSearch={handleSearch} />
       <UsersList users={users} isLoading={isLoading} />
-    </React.Fragment>
+    </>
   );
 };
 
