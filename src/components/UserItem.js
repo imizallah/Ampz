@@ -6,18 +6,24 @@ import Axios from 'axios';
 const UserItem = ({ name, email, username }) => {
   const [userImage, setUserImae] = useState();
 
-  useEffect(async () => {
-    let photo = await Axios.get(`https://avatars.dicebear.com/api/human/${name}.svg`)
-    console.log(photo)
-    setUserImae(photo);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     // You can await here
+  //     let photo = await Axios.get(`https://avatars.dicebear.com/api/human/${username}.svg`)
+  //     console.log(photo.data)
+  //     setUserImae(photo.data);
+  //     // ...
+  //   }
+  //   fetchData();
     
-  }, [name]);
+  // }, [username]);
 
   return (
     <Card className="user">
-      <Card.Img variant="top" src={userImage} className="user__image" alt={name} />
+      <Card.Img variant="top" src={`https://avatars.dicebear.com/api/human/${username}.svg`} className="user__image" alt={name} />
       <Card.Body>
         <Card.Title className="user__name">{name}</Card.Title>
+        
         <Card.Text className="user__details">
           <span>
             <strong>Username:</strong> {username}
