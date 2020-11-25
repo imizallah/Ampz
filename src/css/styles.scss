@@ -30,14 +30,14 @@ body {
 
   &__search {
     input {
-      background: lighten($body-background-color, 10%);
+      background: green;
       margin-left: 10rem;
       border: 1px solid lighten($body-background-color, 10%);
       padding: 1rem 2rem;
-      border-radius: 10rem;
+      border-radius: 3px;
       width: 25rem;
       outline: none;
-      color: $body-color;
+      color: #fff !important;
     }
   }
 }
@@ -57,9 +57,10 @@ body {
   .user {
     width: 30rem;
     margin: 1rem;
-    background: $body-background-color;
+    background: green;
     padding: 0.8rem;
-    box-shadow: 0 2px 7px 3px $body-color;
+    box-shadow: 2px 7px -3px rgba(0, 0, 0, .5);
+    transition: .3s;
 
     &__name {
       font-size: 2rem;
@@ -82,6 +83,11 @@ body {
         line-height: 1.5;
       }
     }
+  }
+
+  .user:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 7px 3px $body-color;
   }
 }
 
